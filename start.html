@@ -21,8 +21,8 @@
 
 <main class="sheet">
   <p class="kicker">開始</p>
-  <h1>時間，放在最後。</h1>
-  <p class="body">先揀這次要看的，再寫下出生資料。日期由你寫，不預先填好某一日。</p>
+  <h1>時間，放在<span class="nw">最後。</span></h1>
+  <p class="body">先揀這次要看的，再寫下出生資料。日期由你寫，不預先填好某<span class="nw">一日。</span></p>
 
   <form id="start-form" action="generate.html" method="get">
     <fieldset class="uses">
@@ -90,14 +90,14 @@
       <input id="time" name="time" placeholder="—" autocomplete="off">
     </div>
 
-    <p class="note">時間如果空着，十二個時辰都會在，不會替你揀一個。</p>
+    <p class="note">時間如果空着，十二個時辰都會在，不會替你揀<span class="nw">一個。</span></p>
     <div class="hours" aria-label="十二時辰">
       <span>子</span><span>丑</span><span>寅</span><span>卯</span>
       <span>辰</span><span>巳</span><span>午</span><span>未</span>
       <span>申</span><span>酉</span><span>戌</span><span>亥</span>
     </div>
 
-    <div class="actions sticky-actions">
+    <div class="actions form-actions">
       <button class="btn solid" type="submit">開始</button>
     </div>
   </form>
