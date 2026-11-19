@@ -357,10 +357,15 @@ h1,h2{font-weight:400;letter-spacing:.04em;line-height:1.35;margin:0}
 .hours span:nth-child(6n){border-right:0}
 .hours span:nth-child(n+7){border-bottom:0}
 
-.sticky-actions{
-  position:sticky;bottom:0;
-  margin-top:36px;padding:16px 0 calc(var(--safe-b) + 8px);
-  background:linear-gradient(180deg, rgba(12,10,8,0), rgba(12,10,8,.92) 28%, rgba(12,10,8,.98));
+.sticky-actions,
+.form-actions{
+  position:static;
+  margin-top:36px;
+  padding:16px 0 calc(var(--safe-b) + 8px);
+  background:none;
+}
+.page-start .sheet{
+  padding-bottom:calc(var(--safe-b) + 28px);
 }
 
 /* ========== GENERATE ========== */
@@ -395,7 +400,7 @@ h1,h2{font-weight:400;letter-spacing:.04em;line-height:1.35;margin:0}
 }
 @keyframes draw{to{stroke-dashoffset:0}}
 .gen-copy{position:relative;z-index:2;max-width:420px}
-.gen-copy h1{font-size:22px;letter-spacing:.08em;line-height:1.5}
+.gen-copy h1{font-size:22px;letter-spacing:.04em;line-height:1.5}
 .btn.text.gen-skip{
   position:absolute;right:24px;left:auto;top:calc(var(--safe-t) + 16px);
   z-index:3;min-width:auto;align-self:auto;
