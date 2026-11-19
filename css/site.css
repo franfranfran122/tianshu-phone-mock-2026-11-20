@@ -261,6 +261,11 @@ h1,h2{font-weight:400;letter-spacing:.04em;line-height:1.35;margin:0}
   padding:56px var(--pad) 48px;
   max-width:520px;margin:0 auto;
   border-top:.5px solid var(--line-faint);
+  min-height:100svh;
+  min-height:100dvh;
+  box-sizing:border-box;
+  background:var(--bg);
+  scroll-margin-top:0;
 }
 .offer h2,.wait h2{font-size:24px;letter-spacing:.06em}
 

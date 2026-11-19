@@ -22,6 +22,26 @@
     return v ? v : "—";
   }
 
+  /* Keep the last two characters + period of a sentence on the same line. Skip locked cover copy. */
+  function protectOrphans(root) {
+    if (!root) return;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    var nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function (node) {
+      var parent = node.parentNode;
+      if (!parent) return;
+      if (parent.closest && (parent.closest(".cover-copy") || parent.closest(".lede") || parent.closest(".nw"))) return;
+      var t = node.nodeValue;
+      if (!t || !/[。．！？]/.test(t)) return;
+      var html = t.replace(/([\u4e00-\u9fff]{2})([。．！？])/g, '<span class="nw">$1$2</span>');
+      if (html === t) return;
+      var wrap = document.createElement("span");
+      wrap.innerHTML = html;
+      parent.replaceChild(wrap, node);
+    });
+  }
+
   /* Cover video fallback: if autoplay fails, Ken Burns still */
   var hero = $(".hero");
   var vid = hero && $(".hero-vid", hero);
@@ -116,9 +136,9 @@
     if (skip) skip.setAttribute("href", dest);
 
     var titles = {
-      year: "先立定底層，<br>再打開 2027 流年。",
-      natal: "先立定底層，<br>排出本命盤。",
-      combined: "先立定底層，<br>再把流年一併讀。"
+      year: "先立定底層，<br>再打開 <span class=\"nw\">2027 流年。</span>",
+      natal: "先立定底層，<br>排出<span class=\"nw\">本命盤。</span>",
+      combined: "先立定底層，<br>再把流年一<span class=\"nw\">併讀。</span>"
     };
     var t = $("[data-gen-title]");
     if (t) t.innerHTML = titles[st.use] || titles.year;
@@ -232,8 +252,17 @@
         btn.classList.add("on");
         var i = parseInt(btn.getAttribute("data-month"), 10) || 0;
         if (titleEl) titleEl.textContent = titles[i];
-        if (readEl) readEl.textContent = readings[i];
+        if (readEl) {
+          readEl.textContent = readings[i];
+          protectOrphans(readEl);
+        }
       });
     });
+  }
+
+  if (document.body && !document.body.classList.contains("page-home")) {
+    protectOrphans(document.body);
+  } else if (document.body) {
+    $all("main, .story, .offer, .wait, .site-foot, .gen-copy").forEach(protectOrphans);
   }
 })();
