@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0c0a08">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<title>2027 流年 · 天書</title>
+<link rel="icon" href="img/mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body class="page-year">
+<div class="grain" aria-hidden="true"></div>
+<div class="paper" aria-hidden="true"></div>
+<header class="bar">
+  <span class="badge">示範　並非真實個案</span>
+  <a class="quiet" href="system.html">這套系統</a>
+</header>
+
+<main class="sheet year-sheet">
+  <div class="use-switch" role="tablist" aria-label="用途" data-use-switch>
+    <button type="button" data-use="natal">本命盤</button>
+    <button type="button" class="on" data-use="year">2027 流年</button>
+    <button type="button" data-use="combined">綜合</button>
+  </div>
+
+  <div class="check" data-check>
+    <div class="cell"><div class="k">日期</div><div class="v" data-slot="date">—</div></div>
+    <div class="cell"><div class="k">曆法</div><div class="v" data-slot="cal">—</div></div>
+    <div class="cell"><div class="k">出生地</div><div class="v" data-slot="place">—</div></div>
+    <div class="cell"><div class="k">性別</div><div class="v" data-slot="gender">—</div></div>
+    <div class="cell"><div class="k">時間</div><div class="v" data-slot="time">—</div></div>
+  </div>
+  <p class="note" data-hours-note hidden>時間如果空着，十二個時辰都會在，不會替你揀一個。</p>
+
+  <nav class="view-tabs" aria-label="層次">
+    <a href="#view-base" class="on" data-view-tab="base">底層</a>
+    <a href="#view-stack" data-view-tab="stack">疊層</a>
+    <a href="#view-note" data-view-tab="note">解說</a>
+  </nav>
+
+  <section class="view on" id="view-base" data-view="base">
+    <p class="lab">底層</p>
+    <div class="pillars" aria-label="四柱">
+      <div class="pillar">
+        <span class="pk">年柱</span>
+        <span class="pv" data-slot="py">—</span>
+      </div>
+      <div class="pillar">
+        <span class="pk">月柱</span>
+        <span class="pv" data-slot="pm">—</span>
+      </div>
+      <div class="pillar">
+        <span class="pk">日柱</span>
+        <span class="pv" data-slot="pd">—</span>
+      </div>
+      <div class="pillar">
+        <span class="pk">時柱</span>
+        <span class="pv" data-slot="pt">—</span>
+      </div>
+    </div>
+    <p class="note" data-pillar-note>日期由你寫下，四柱會排在這裡。這次示範不代算。</p>
+
+    <div class="year-axis">
+      <div class="axis-head">
+        <p class="lab">2027</p>
+        <p class="axis-title" data-month-title>整年</p>
+      </div>
+      <div class="months" data-months>
+        <button type="button" class="on" data-month="0">整年</button>
+        <button type="button" data-month="1">一月</button>
+        <button type="button" data-month="2">二月</button>
+        <button type="button" data-month="3">三月</button>
+        <button type="button" data-month="4">四月</button>
+        <button type="button" data-month="5">五月</button>
+        <button type="button" data-month="6">六月</button>
+        <button type="button" data-month="7">七月</button>
+        <button type="button" data-month="8">八月</button>
+        <button type="button" data-month="9">九月</button>
+        <button type="button" data-month="10">十月</button>
+        <button type="button" data-month="11">十一月</button>
+        <button type="button" data-month="12">十二月</button>
+      </div>
+      <p class="read" data-month-read>先看這一年的節奏，再進入某一個月。不先下吉凶。</p>
+    </div>
+
+    <div class="actions">
+      <a class="btn solid" href="#view-stack" data-to="stack">進入疊層</a>
+    </div>
+  </section>
+
+  <section class="view" id="view-stack" data-view="stack" hidden>
+    <p class="lab">疊層</p>
+    <p class="body tight">其他傳統疊上來，對看，不合併。</p>
+    
+<div class="layers">
+  <article class="layer-card">
+    <p class="lk">七政四餘</p>
+    <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
+      <circle cx="100" cy="100" r="84"/>
+      <circle cx="100" cy="100" r="58"/>
+      <circle cx="100" cy="100" r="28"/>
+      <circle cx="100" cy="16" r="3.2" fill="rgba(216,193,154,.8)" stroke="none"/>
+      <circle cx="158" cy="48" r="3.2" fill="rgba(216,193,154,.8)" stroke="none"/>
+      <circle cx="184" cy="100" r="3.2" fill="rgba(216,193,154,.8)" stroke="none"/>
+      <circle cx="158" cy="152" r="2.6" fill="rgba(216,193,154,.7)" stroke="none"/>
+      <circle cx="100" cy="184" r="2.6" fill="rgba(216,193,154,.7)" stroke="none"/>
+      <circle cx="42" cy="152" r="2.6" fill="rgba(216,193,154,.7)" stroke="none"/>
+      <circle cx="16" cy="100" r="3.2" fill="rgba(216,193,154,.8)" stroke="none"/>
+      <line x1="100" y1="16" x2="100" y2="184"/>
+      <line x1="16" y1="100" x2="184" y2="100"/>
+    </svg>
+  </article>
+  <article class="layer-card">
+    <p class="lk">西洋星盤</p>
+    <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
+      <circle cx="100" cy="100" r="86"/>
+      <circle cx="100" cy="100" r="62"/>
+      <circle cx="100" cy="100" r="20"/>
+      <g>
+        <line x1="100" y1="14" x2="100" y2="186"/>
+        <line x1="14" y1="100" x2="186" y2="100"/>
+        <line x1="39" y1="39" x2="161" y2="161"/>
+        <line x1="161" y1="39" x2="39" y2="161"/>
+      </g>
+    </svg>
+  </article>
+  <article class="layer-card">
+    <p class="lk">吠陀</p>
+    <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
+      <rect x="22" y="22" width="156" height="156"/>
+      <line x1="22" y1="22" x2="178" y2="178"/>
+      <line x1="178" y1="22" x2="22" y2="178"/>
+      <line x1="100" y1="22" x2="178" y2="100"/>
+      <line x1="178" y1="100" x2="100" y2="178"/>
+      <line x1="100" y1="178" x2="22" y2="100"/>
+      <line x1="22" y1="100" x2="100" y2="22"/>
+      <circle cx="100" cy="100" r="10"/>
+    </svg>
+  </article>
+  <article class="layer-card">
+    <p class="lk">九星</p>
+    <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
+      <rect x="28" y="28" width="144" height="144"/>
+      <line x1="76" y1="28" x2="76" y2="172"/>
+      <line x1="124" y1="28" x2="124" y2="172"/>
+      <line x1="28" y1="76" x2="172" y2="76"/>
+      <line x1="28" y1="124" x2="172" y2="124"/>
+      <circle cx="52" cy="52" r="3" fill="rgba(216,193,154,.85)" stroke="none"/>
+      <circle cx="100" cy="100" r="3" fill="rgba(232,220,190,.95)" stroke="none"/>
+      <circle cx="148" cy="148" r="3" fill="rgba(216,193,154,.75)" stroke="none"/>
+    </svg>
+  </article>
+</div>
+<p class="note center">並放，不合併。</p>
+
+    <div class="actions">
+      <a class="btn solid" href="#view-note" data-to="note">進入解說</a>
+    </div>
+  </section>
+
+  <section class="view" id="view-note" data-view="note" hidden>
+    <p class="lab">解說</p>
+    <p class="body">只在幾種看法碰到一起時才寫下來。不改已經算出來的。</p>
+    <ul class="meets">
+      <li>
+        <span class="mk">底層與七政</span>
+        <p>兩種算法在同一處都指向節奏加快。先把要做的事排開，再看別的建議。</p>
+      </li>
+      <li>
+        <span class="mk">西洋星盤與吠陀</span>
+        <p>位置相近，結論不合併成一句。這一處值得分開讀完。</p>
+      </li>
+    </ul>
+    <div class="package">
+      <p class="lab">命書</p>
+      <p class="body">命書是一份可以帶走的付費套件。這次示範只讀到這裡。</p>
+    </div>
+  </section>
+</main>
+<script src="js/app.js"></script>
+</body>
+</html>

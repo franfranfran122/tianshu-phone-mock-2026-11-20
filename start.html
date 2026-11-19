@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0c0a08">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<title>開始 · 天書</title>
+<link rel="icon" href="img/mark.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body class="page-start">
+<div class="grain" aria-hidden="true"></div>
+<div class="paper" aria-hidden="true"></div>
+<header class="bar">
+  <a class="mark" href="index.html" aria-label="天書"><i></i><span>天書</span></a>
+  <a class="quiet" href="system.html">這套系統</a>
+</header>
+
+<main class="sheet">
+  <p class="kicker">開始</p>
+  <h1>時間，放在最後。</h1>
+  <p class="body">先揀這次要看的，再寫下出生資料。日期由你寫，不預先填好某一日。</p>
+
+  <form id="start-form" action="generate.html" method="get">
+    <fieldset class="uses">
+      <legend>這次要看</legend>
+      <div class="use-grid" role="radiogroup" aria-label="這次要看" data-use-pick>
+        <label class="use on">
+          <input type="radio" name="use" value="year" checked>
+          <span class="use-k">2027 流年運程</span>
+          <span class="use-v">把這段路打開</span>
+        </label>
+        <label class="use">
+          <input type="radio" name="use" value="natal">
+          <span class="use-k">本命盤</span>
+          <span class="use-v">先看出身的底</span>
+        </label>
+        <label class="use">
+          <input type="radio" name="use" value="combined">
+          <span class="use-k">綜合批命</span>
+          <span class="use-v">本命與流年一併讀</span>
+        </label>
+      </div>
+    </fieldset>
+
+    <div class="ymd">
+      <div class="field">
+        <label for="year">年</label>
+        <input id="year" name="y" inputmode="numeric" maxlength="4" placeholder="—" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="month">月</label>
+        <input id="month" name="m" inputmode="numeric" maxlength="2" placeholder="—" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="day">日</label>
+        <input id="day" name="d" inputmode="numeric" maxlength="2" placeholder="—" autocomplete="off">
+      </div>
+    </div>
+
+    <div class="field">
+      <span class="lab">陽曆／陰曆</span>
+      <div class="toggle" role="group" aria-label="陽曆或陰曆" data-cal-pick>
+        <button type="button" class="on" data-cal="solar">陽曆</button>
+        <button type="button" data-cal="lunar">陰曆</button>
+      </div>
+      <input type="hidden" name="cal" value="solar">
+    </div>
+
+    <div class="field">
+      <label for="place">出生地</label>
+      <input id="place" name="place" placeholder="—" autocomplete="off">
+    </div>
+
+    <div class="field">
+      <span class="lab">性別</span>
+      <div class="toggle" role="group" aria-label="性別" data-gender-pick>
+        <button type="button" class="on" data-gender="">揀一個</button>
+        <button type="button" data-gender="女">女</button>
+        <button type="button" data-gender="男">男</button>
+      </div>
+      <input type="hidden" name="gender" value="">
+    </div>
+
+    <div class="field">
+      <label for="time">時間（可空着）</label>
+      <input id="time" name="time" placeholder="—" autocomplete="off">
+    </div>
+
+    <p class="note">時間如果空着，十二個時辰都會在，不會替你揀一個。</p>
+    <div class="hours" aria-label="十二時辰">
+      <span>子</span><span>丑</span><span>寅</span><span>卯</span>
+      <span>辰</span><span>巳</span><span>午</span><span>未</span>
+      <span>申</span><span>酉</span><span>戌</span><span>亥</span>
+    </div>
+
+    <div class="actions sticky-actions">
+      <button class="btn solid" type="submit">開始</button>
+    </div>
+  </form>
+</main>
+<script src="js/app.js"></script>
+</body>
+</html>
